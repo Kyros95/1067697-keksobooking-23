@@ -2,25 +2,23 @@
 //           https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 
-function getIntegerNumber(x, y) {
-  if (x >= 0 && y >= 0) {
-    min = Math.ceil(Math.min(x, y));
-    max = Math.floor(Math.max(x, y));
+function getIntegerNumber(firstNumber, secondNumber) {
+  if (firstNumber >= 0 && secondNumber >= 0) {
+    const min = Math.ceil(Math.min(firstNumber, secondNumber));
+    const max = Math.floor(Math.max(firstNumber, secondNumber));
     const result = Math.floor(Math.random() * (max - min + 1)) + min;
     return result;
-  } else {
-    return ('Введите положительные числа');
   }
+  throw new Error('Введите положительные числа');
 }
 
-function getFloatNumber(x, y, point) {
-  if (x >= 0 && y >= 0) {
-    min = Math.min(x, y);
-    max = Math.max(x, y);
+function getFloatNumber(firstNumber, secondNumber, point) {
+  if (firstNumber >= 0 && secondNumber >= 0) {
+    const min = Math.min(firstNumber, secondNumber);
+    const max = Math.max(firstNumber, secondNumber);
     const result = Math.random() * (max - min + 1) + min;
     return result.toFixed(point);
-  } else {
-    return ('Введите положительные числа');
   }
+  throw new Error('Введите положительные числа');
 }
 
